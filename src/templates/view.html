@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Zeus Inspector</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; color: #333; background-color: #f4f4f4;}
+        .container { max-width: 960px; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        header { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; }
+        nav a { margin-left: 15px; text-decoration: none; color: #007bff; }
+        nav a:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #777; font-size: 0.9em; }
+        h1, h2, h3, h4, h5, h6 { color: #333; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+        table, th, td { border: 1px solid #ccc; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        pre { background-color: #f6f8fa; padding: 10px; border-radius: 3px; overflow-x: auto; margin-bottom: 1em; }
+        code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; background-color: rgba(27,31,35,.05); padding: .2em .4em; border-radius: 3px; }
+        pre code { background-color: transparent; padding: 0; }
+        blockquote { border-left: 4px solid #ccc; margin: 0 0 1em; padding: 0 1em; color: #777; }
+        img { max-width: 100%; height: auto; }
+
+        /* Form Styling (if needed, though this is view.html) */
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover { background-color: #218838; }
+        .delete-button { background-color: #dc3545; }
+        .delete-button:hover { background-color: #c82333; }
+        .cancel-button { background-color: #6c757d; }
+        .cancel-button:hover { background-color: #5a6268; }
+
+        /* Flash Messages (from base.html, but included for completeness) */
+        .flash-message {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+        }
+        .flash-message.success { background-color: #28a745; }
+        .flash-message.danger { background-color: #dc3545; }
+        .flash-message.info { background-color: #17a2b8; }
+    </style>
+    <!--script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script -->
+    <script type="text/javascript" src="/static/js/mermaid.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <h2>{{ page }}</h2>
+
+            <div class="markdown-output">
+                {{ html_content | safe }}
+            </div>
+        </main>
+
+    </div>
+    <div>
+    <footer>
+      <a href=http://localhost:5009/>Top</a>
+    </footer>
+    </div>
+    <!-- Mermaid JavaScriptライブラリの読み込み -->
+    <!-- 最新版は [https://unpkg.com/mermaid@latest/dist/mermaid.min.js](https://unpkg.com/mermaid@latest/dist/mermaid.min.js) で確認できます -->
+    <!-- script>
+        // Mermaidの初期化設定
+        // ページロード時に自動的にMermaid図をレンダリング
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default' // 図のテーマ ('default', 'forest', 'dark', 'neutral', 'base')
+        });
+    </script-->
+</body>
+</html>
